@@ -32,6 +32,15 @@ class Polyhedron:
             hull = Delaunay(hull)
             return hull.find_simplex(p) >= 0
 
+    def concentration_at_point(self, point):
+        if not self.contains_point(point):
+            return 0
+
+        if self.inner_shape is not None and self.inner_shape.contains_point(point):
+            return self.inner_shape.concentration
+
+        return self.concentration
+
 def sphere_points():
     r = STOPPING_DISTANCE
     points = []
@@ -48,6 +57,9 @@ def sphere_points():
 
 
 SPHERE_POINTS = sphere_points()
+
+inner_shape = Polyhedron(cube_inner_pts, None, 1)
+shape = Polyhedron(cube_pts, inner_shape, 1)
 
 xs = np.random.rand(100000) * 105
 ys = np.random.rand(100000) * 100
