@@ -1,5 +1,7 @@
 from constants import *
 
+# this function generates a random spread of 'source particles' in a polyhedron bounding cuboid and then rejects the
+# particles outside of the polyhedron
 def generate_sources(poly, number_of_sources):
     sources = []
     batch_size = number_of_sources

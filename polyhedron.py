@@ -1,5 +1,8 @@
 from scipy.spatial import Delaunay
 
+# This class defines a polyhedron from its outer points and additionally defines the bounding cuboid for the polyhedron
+
+
 class Polyhedron:
     def __init__(self, points, inner_shape, concentration):
         self.inner_shape = inner_shape

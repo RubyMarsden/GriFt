@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.spatial.qhull import ConvexHull
 
+# These functions graphically plot the polyhedron and the randomly distributed source points
 
 def plot_poly_with_sources(poly, points):
     points_by_innermost_poly = {poly: [] for poly in poly.all_nested_polygons()}
