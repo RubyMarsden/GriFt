@@ -15,6 +15,7 @@ def generate_sources(poly, number_of_sources):
 
     return sources[0:number_of_sources]
 
+
 def _sample_local_Ft(poly, source_location, z_cut_off):
     local_Ft = 0
     #if shape.is_interior(point) and point[2] < z_cut_off - STOPPING_DISTANCE:

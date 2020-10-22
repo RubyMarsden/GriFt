@@ -5,7 +5,8 @@ import graphing
 from FtCalculations import generate_sources, sample_total_Ft
 from polyhedron import Polyhedron
 
-# points defining the shapes - here two shapes are defined, a cube and a tetragonal crystal with two pyramidal terminations
+# points defining the shapes - here two shapes are defined, a cube and a tetragonal crystal with two pyramidal
+# terminations
 xal_pts = np.array([[50, 0, 0], [150, 0, 0], [150, 100, 0], [50, 100, 0],
                     [50, 0, 100], [150, 0, 100], [150, 100, 100], [50, 100, 100], [0, 50, 50], [200, 50, 50]])
 xal_inner_pts = np.array([[60, 20, 20], [140, 20, 20], [140, 80, 20], [60, 80, 20],
@@ -20,8 +21,8 @@ cube_inner_pts = np.array([[20, 20, 20], [20, 20, 80], [80, 80, 80], [20, 80, 80
 inner_shape = Polyhedron(xal_inner_pts, None, 1)
 shape = Polyhedron(xal_pts, inner_shape, 10)
 
-# finding the smallest 'number of sources' with change of 0.1%
 
+# finding the smallest 'number of sources' with change of 0.1%
 def test_precision(total_Ft, total_Ft_1, total_Ft_2, total_Ft_3):
     print(total_Ft, ", ", total_Ft_1, ", ", total_Ft_2, ", ", total_Ft_3)
     if total_Ft_1 and total_Ft_2 and total_Ft_3 is not None:
