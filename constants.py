@@ -4,7 +4,7 @@ STOPPING_DISTANCE = 20
 # sphere resolution must be even. Additionally, runtime increases as sphere_resolution^2 because the resolution is used
 # to determine how many particles are used when generating a shell of particles at the stopping distance
 sphere_resolution = 30
-number_of_sources = 100000
+
 
 
 def sphere_points():
