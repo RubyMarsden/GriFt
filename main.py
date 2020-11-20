@@ -48,7 +48,7 @@ if show_plot:
 
 # SPECIFY number of steps for z_cut_off values
 
-z_cut_off_resolution = 51
+z_cut_off_resolution = 5
 
 # calculating Ft for a range of polishing depths
 print("Calculating...")
