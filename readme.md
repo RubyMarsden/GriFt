@@ -1,6 +1,6 @@
 # Ft polishing estimator
 
-This program accompanies the paper "PAPER NAME HERE".
+This program accompanies the paper *Considerations for double dating complex zircon in secular disequilibrium*.
 
 The model in this program allows for Ft calculation through random parent isotope distribution within a convex crystal.
 The random parent isotope sources each have a 'shell' of alpha particles modelled of which the fraction that are outside
@@ -16,9 +16,9 @@ said number doesn't change the Ft value measured within a specified precision. H
 pyramidal terminations of height 200 and width and depth 100 a graph is plotted to show the difference in totalFt value
 calculated when different numbers of sources are used.
 
-![Image of Graph](https:)
+![Image of Graph](https://github.com/RubyMarsden/PolishingFt/blob/master/images/Graph.jpg)
 
-In the paper which this program accompanies, a value of 100000
-was used, while for very low values of z_cut_off this doesn't reach great reliability, the time taken for the program
-to run and the reliability of Ft for values of z_cut_off of 50% and above meant that this was viewed as sufficient for
-requirements.
+In the paper which this program accompanies, a value of 100000 was used, while for very low values of z_cut_off this
+doesn't reach great reliability, the time taken for the program to run and the reliability of Ft for values of z_cut_off
+of 50% and above meant that this was viewed as sufficient for requirements. The number of sources required will vary for
+different polyhedra and should therefore be considered carefully.
