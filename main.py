@@ -33,7 +33,7 @@ shape = Polyhedron(points = xal_pts, inner_shape = inner_shape, concentration = 
 
 # SPECIFY number of alpha particle sources
 
-number_of_sources = 1000
+number_of_sources = 100000
 
 # generate a random source spread
 sources = generate_sources(shape, number_of_sources)
@@ -46,9 +46,9 @@ if show_plot:
     # plotting the crystal shape with sources
     graphing.plot_poly_with_sources(shape, sources)
 
-# SPECIFY number of steps for z_cut_off values
+# SPECIFY number of steps for z_cut_off values - z_cut_off starts at z=shape.min_z and ends at z=shape.max_z
 
-z_cut_off_resolution = 5
+z_cut_off_resolution = 51
 
 # calculating Ft for a range of polishing depths
 print("Calculating...")

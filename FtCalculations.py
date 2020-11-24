@@ -1,5 +1,6 @@
 from constants import *
 
+
 # this function generates a random spread of 'source particles' in a polyhedron bounding cuboid and then rejects the
 # particles outside of the polyhedron
 def generate_sources(poly, number_of_sources):
@@ -16,14 +17,21 @@ def generate_sources(poly, number_of_sources):
     return sources[0:number_of_sources]
 
 
+# this function calculates the Ft for a single 'source particle' as a fraction of the number of particles in the shell
+# surrounding the 'source particle' which are inside the polyhedron
 def _sample_local_Ft(poly, source_location, z_cut_off):
     local_Ft = 0
-    #if shape.is_interior(point) and point[2] < z_cut_off - STOPPING_DISTANCE:
-        #return 1
+    # the following code is commented out - it is a time saving piece of code which only works if the shape being tested
+    # has planes in the z axis which are parallel to the z axis (e.g. a cuboid)
+    """
+    if shape.is_interior(point) and point[2] < z_cut_off - STOPPING_DISTANCE:
+    return 1
+    """
 
     if source_location[2] > z_cut_off + STOPPING_DISTANCE:
         return 0
-
+    # the following code tests whether or not it is possible to save information about previous localFts calculated
+    # already so they do not need to be calculated again, saving time
     can_cache = source_location[2] < z_cut_off - STOPPING_DISTANCE
 
     if can_cache:
@@ -42,12 +50,14 @@ def _sample_local_Ft(poly, source_location, z_cut_off):
 
     return local_Ft
 
+
+# this function sums the total Ft below the assigned z cut-off value
 def sample_total_Ft(poly, sources, z_cut_off):
     total_Ft = 0
     total_sources = 0
     for source in sources:
         concentration = poly.concentration_at_point(source)
-        local_Ft = _sample_local_Ft(poly, source, z_cut_off)*concentration
+        local_Ft = _sample_local_Ft(poly, source, z_cut_off) * concentration
         total_Ft += local_Ft
         if source[2] <= z_cut_off:
             total_sources += concentration
