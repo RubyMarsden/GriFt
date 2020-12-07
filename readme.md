@@ -1,4 +1,4 @@
-# Ft polishing estimator
+# Ft grinding estimator
 
 This program accompanies the paper *Considerations for double dating complex zircon in secular disequilibrium*.
 
@@ -14,7 +14,7 @@ As the number of sources increases the time taken by the program increases. Howe
 required to ensure accuracy of the result. One way to ensure a sufficient number is used is to check that increasing
 said number doesn't change the Ft value measured within a specified precision. Here for a tetragonal prism with
 pyramidal terminations of height 200 and width and depth 100 a graph is plotted to show the difference in totalFt value
-calculated when different numbers of sources are used.
+calculated when different numbers of sources are used at different z_cut_off values.
 
 ![Image of Graph](https://github.com/RubyMarsden/PolishingFt/blob/master/images/Graph.jpg)
 
